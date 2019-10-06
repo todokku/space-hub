@@ -1,1 +1,43 @@
-<p>neosw works!</p>
+<section>
+
+    <mat-card class="card">
+      <div class="card__header">
+        <i class="material-icons">
+          info
+        </i>
+        <h1>NEAR EARTH ASTEROIDS</h1>
+        <p>
+          Web service using NASA NEOSW API for providing near earth Asteroid
+          information
+        </p>
+      </div>
+      <div class="card__content">
+        <form [formGroup]="form">
+          <div class="input-container">
+            <input
+              class="effect-1"
+              dateLimit="7"
+              type="text"
+              placeholder="Choose date range"
+              ngxDaterangepickerMd
+              formControlName="selected"
+            />
+    
+            <span class="focus-border"></span>
+          </div>
+        </form>
+        <button
+          class="button-shadowed"
+          (click)="
+            searchAsteroids(
+              form.value.selected.startDate,
+              form.value.selected.endDate,
+              form.value.hazardous
+            )
+          "
+        >
+          Search
+        </button>
+      </div>
+    </mat-card>
+</section>

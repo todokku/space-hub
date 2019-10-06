@@ -10,10 +10,11 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public getNeosw(date: string) {
-    return this.httpClient.get<any>(
-      `${this.apiURL}/neo/rest/v1/feed?${date}&api_key=${this.key}`
+  public getNEOSW(start, end) {
+    const res = this.httpClient.get(
+      `${this.apiURL}/neo/rest/v1/feed?start_date=${start}&end_date=${end}&api_key=${this.key}`
     );
+    return res;
   }
 
   public getApod() {

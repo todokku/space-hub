@@ -1,0 +1,122 @@
+$main-color: #292D3E;
+$secondary-color: #1D9AF2;
+$highlight-color: #53a7ea;
+
+.card {
+    font-family: 'Rajdhani', sans-serif;
+    width: 75%;
+    margin: 20vh auto;
+    text-align: center;
+    color: $highlight-color;
+    background-color: $main-color;
+    border: 1px solid $secondary-color;
+    border-radius: 4px;
+    box-shadow: 1px 1px $highlight-color, 2px 2px $highlight-color, 3px 3px $highlight-color !important;
+}
+
+.card__header {
+    padding: 20px 0 0 0;
+    i {
+        cursor: pointer;
+        position: absolute;
+        right: 5%;
+        font-size: 18px;
+    }
+    h1{
+        text-align: center;
+        font-size: 34px;
+    }
+    h1,
+    p {
+        margin: 10px auto;
+    }
+    p {
+        font-size: 14px;
+    }
+}
+
+.card__content {
+    padding: 0 0 25px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    font-weight: 500;
+    ::ng-deep {
+        .md-drppicker td.active,
+        .md-drppicker .btn{
+            background: $main-color;
+            color: $secondary-color;
+        }
+        .md-drppicker {
+            background: $main-color;
+        }
+        .calendar-table {
+            background: $main-color;
+            border-color: $highlight-color;
+        }
+    }
+}
+
+
+.button-shadowed {
+    color: $secondary-color;
+    background-color: $main-color;
+    border: 1px solid $secondary-color;
+    border-radius: 4px;
+    padding: 0 15px;
+    cursor: pointer;
+    height:32px;
+    font-size:14px;
+    transition: all 0.2s ease-in-out;
+}
+.button-shadowed:hover {
+    box-shadow: 1px 1px $highlight-color, 2px 2px $highlight-color, 3px 3px $highlight-color;
+    transform: translateX(-3px);
+}
+
+
+
+
+:focus{outline: none;}
+
+.input-container{
+    float: left;
+    width: 70%;
+    margin: 20px 3%;
+    position: relative;
+} 
+
+input[type="text"] {
+  font-family: 'Rajdhani', sans-serif;
+  color: $secondary-color;
+  width: 80%;
+  height: 45px;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  background-color: $main-color;
+  border: none;
+  text-align: center;
+  border-radius: 4px;
+}
+input::placeholder {
+    color: #ffffff;
+}
+
+.effect-1~.focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: $highlight-color;
+  transition: .2s;
+}
+
+.effect-1:focus~.focus-border {
+  width: 100%;
+  transition: .2s;
+}
