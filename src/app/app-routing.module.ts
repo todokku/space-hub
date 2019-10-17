@@ -21,6 +21,13 @@ const routes: Routes = [
           import("./modules/insight-weather/insight-weather.module").then(
             m => m.InsightWeatherModule
           )
+      },
+      {
+        path: "curiosity",
+        loadChildren: () =>
+          import("./modules/curiosity/curiosity.module").then(
+            m => m.CuriosityModule
+          )
       }
     ]
   }

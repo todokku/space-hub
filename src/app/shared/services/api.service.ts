@@ -22,9 +22,16 @@ export class ApiService {
       `${this.apiURL}/planetary/apod?api_key=${this.key}`
     );
   }
+
   public getInsightWeather() {
     return this.httpClient.get<any>(
       `${this.apiURL}/insight_weather/?api_key=${this.key}&feedtype=json&ver=1.0`
+    );
+  }
+
+  public getCuriosityPics(date: string) { // '2019-6-3'
+    return this.httpClient.get<any>(
+      `${this.apiURL}/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&api_key=${this.key}`
     );
   }
 }
