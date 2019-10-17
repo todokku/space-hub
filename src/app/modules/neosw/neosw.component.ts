@@ -50,7 +50,6 @@ export class NeoswComponent implements OnInit {
         this.loading = false;
         this.dataSource = this.neosw;
       }, 250);
-      // console.log(this.neosw,this.neosw.flat(), this.neosw.flat().map(x=>console.log(x.close_approach_data[0].close_approach_date)));
     });
   }
 }

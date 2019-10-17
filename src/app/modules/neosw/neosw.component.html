@@ -1,7 +1,9 @@
 <mat-card>
     <mat-card-header>
       <mat-card-title>
-        Near Earth Asteroids Search
+        <h1>
+          Near Earth Asteroids Search
+        </h1>
       </mat-card-title>
     </mat-card-header>
     <form [formGroup]="form">
@@ -23,8 +25,7 @@
         (click)="
           searchAsteroids(
             form.value.selected.startDate,
-            form.value.selected.endDate,
-            form.value.hazardous
+            form.value.selected.endDate
           )
         "
       >

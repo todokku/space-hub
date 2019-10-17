@@ -3,10 +3,8 @@ table {
 }
 mat-card {
     margin: 25px auto;
-    width: 80%;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+}
+
+.mat-input-element {
+    font-family: 'Rajdhani', sans-serif;
 }
