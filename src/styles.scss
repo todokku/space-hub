@@ -24,3 +24,8 @@ img {
     width: 100%;
 }
 
+.flex-container-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

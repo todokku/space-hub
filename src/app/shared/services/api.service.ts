@@ -29,9 +29,9 @@ export class ApiService {
     );
   }
 
-  public getCuriosityPics(date: string) { // '2019-6-3'
+  public getCuriosityPics() { // '2019-6-3'
     return this.httpClient.get<any>(
-      `${this.apiURL}/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&api_key=${this.key}`
+      `${this.apiURL}/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2019-9-23&api_key=${this.key}`
     );
   }
 }
