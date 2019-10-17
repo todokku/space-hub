@@ -1,8 +1,15 @@
-import { Component, OnInit } from "@angular/core";;
+import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { FormGroup, FormBuilder } from "@angular/forms";
 import * as moment from "moment";
-import { ApiService } from 'src/app/shared/services/api.service';
+import { ApiService } from "src/app/shared/services/api.service";
+
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
+}
 
 @Component({
   selector: "app-neosw",
@@ -11,7 +18,11 @@ import { ApiService } from 'src/app/shared/services/api.service';
 })
 export class NeoswComponent implements OnInit {
   form: FormGroup;
-  neosw:any;
+  neosw: any;
+  displayedColumns: string[] = ["name", "date", "hazardous", "sentry"];
+  dataSource;
+  any;
+  loading = false;
 
   constructor(private service: ApiService, private fb: FormBuilder) {}
 
@@ -23,14 +34,23 @@ export class NeoswComponent implements OnInit {
 
   async searchAsteroids(startDate, endDate) {
     const res: Observable<any> = await this.service.getNEOSW(
-      moment(startDate).format('YYYY-MM-DD'),
-      moment(endDate).format('YYYY-MM-DD')
+      moment(startDate).format("YYYY-MM-DD"),
+      moment(endDate).format("YYYY-MM-DD")
     );
-    res.subscribe((data) => {
+    res.subscribe(data => {
       console.log(data);
+      const neos: any = [];
+      this.neosw = [];
+      Object.keys(data.near_earth_objects).forEach(dateKey =>
+        neos.push(data.near_earth_objects[dateKey])
+      );
+      neos.flat().map(neo => this.neosw.push(neo));
+      this.loading = true;
+      setTimeout(() => {
+        this.loading = false;
+        this.dataSource = this.neosw;
+      }, 250);
+      // console.log(this.neosw,this.neosw.flat(), this.neosw.flat().map(x=>console.log(x.close_approach_data[0].close_approach_date)));
     });
   }
-
 }
-
-

@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-
+import { CommonModule } from "@angular/common";
 
 import { ReactiveFormsModule } from "@angular/forms";
 
@@ -8,15 +8,18 @@ import {
   MatNativeDateModule,
   MatInputModule
 } from "@angular/material";
+import { MatTableModule } from "@angular/material/table";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 import { NgxDaterangepickerMd } from "ngx-daterangepicker-material";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatCardModule } from "@angular/material/card";
 
-import { HttpClientModule } from '@angular/common/http';
-import { NeoswRoutingModule } from './neosw-routing.module';
-import { NeoswComponent } from './neosw.component';
+import { HttpClientModule } from "@angular/common/http";
+import { NeoswRoutingModule } from "./neosw-routing.module";
+import { NeoswComponent } from "./neosw.component";
+import { MatPaginatorModule } from "@angular/material/paginator";
 
 @NgModule({
   declarations: [NeoswComponent],
@@ -31,7 +34,11 @@ import { NeoswComponent } from './neosw.component';
     MatNativeDateModule,
     MatInputModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    CommonModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule
   ],
   providers: [MatDatepickerModule]
 })

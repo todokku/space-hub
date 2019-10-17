@@ -1,16 +1,13 @@
-<clr-main-container>
-  <clr-header>
-    <div class="header-nav" [clr-nav-level]="1">
-      <ul class="list-unstyled">
-        <li><a (click)="navigateTo('/apod')">APOD</a></li>
-        <li><a (click)="navigateTo('/neosw')">NEO</a></li>
-        <li><a (click)="navigateTo('/insight-weather')">INSIGHT</a></li>
-      </ul>
-    </div>
-  </clr-header>
+<mat-toolbar>
+    <button mat-button [matMenuTriggerFor]="menu">Tools</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="navigateTo('/neosw')">NEOSW</button>
+      <button mat-menu-item (click)="navigateTo('/apod')">APOD</button>
+    </mat-menu>
+  </mat-toolbar>
   <div class="content-container">
     <main class="content-area">
       <router-outlet></router-outlet>
     </main>
   </div>
-</clr-main-container>
+  
