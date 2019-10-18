@@ -29,7 +29,10 @@ export class NeoswComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      selected: { startDate: "", endDate: "" }
+      selected: {
+        startDate: moment(Date.now()).format("YYYY-MM-DD"),
+        endDate: moment(Date.now()).format("YYYY-MM-DD")
+      }
     });
   }
 
