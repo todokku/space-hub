@@ -20,6 +20,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { NeoswRoutingModule } from "./neosw-routing.module";
 import { NeoswComponent } from "./neosw.component";
 import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatExpansionModule } from "@angular/material/expansion";
 
 @NgModule({
   declarations: [NeoswComponent],
@@ -38,7 +39,8 @@ import { MatPaginatorModule } from "@angular/material/paginator";
     MatTableModule,
     CommonModule,
     MatProgressSpinnerModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatExpansionModule
   ],
   providers: [MatDatepickerModule]
 })

@@ -12,5 +12,26 @@ mat-card {
 .example-header-image {
     background-image: url('https://image.flaticon.com/icons/svg/2127/2127165.svg');
     background-size: cover;
-  }
+}
   
+.hazardous {
+   color:red;
+   opacity: 0.6;
+}
+
+mat-panel-title {
+    width: 25%;
+    text-align: center;
+}
+
+mat-panel-description {
+    text-align: left;
+    flex:1;
+}
+
+.mat-expansion-panel__content {
+    margin: 15px auto;
+    
+}
+
+// width: 75%;

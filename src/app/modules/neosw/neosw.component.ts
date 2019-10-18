@@ -23,6 +23,7 @@ export class NeoswComponent implements OnInit {
   dataSource;
   any;
   loading = false;
+  panelOpenState = false;
 
   constructor(private service: ApiService, private fb: FormBuilder) {}
 
