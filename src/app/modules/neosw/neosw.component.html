@@ -40,7 +40,9 @@
 
 <div *ngIf="dataSource">
   <mat-accordion *ngFor="let neo of dataSource">
-    <mat-expansion-panel>
+    <mat-expansion-panel
+      [ngClass]="{ danger: neo.is_potentially_hazardous_asteroid }"
+    >
       <mat-expansion-panel-header>
         <mat-panel-title>
           {{ neo.name }}

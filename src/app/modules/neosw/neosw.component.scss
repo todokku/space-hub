@@ -1,4 +1,4 @@
-table { 
+table {
     width: 100%;
 }
 mat-card {
@@ -13,7 +13,7 @@ mat-card {
     background-image: url('https://image.flaticon.com/icons/svg/2127/2127165.svg');
     background-size: cover;
 }
-  
+
 .hazardous {
    color:red;
    opacity: 0.6;
@@ -31,7 +31,8 @@ mat-panel-description {
 
 .mat-expansion-panel__content {
     margin: 15px auto;
-    
 }
 
-// width: 75%;
+.danger {
+  background-color: rgb(228, 172, 172);
+}
