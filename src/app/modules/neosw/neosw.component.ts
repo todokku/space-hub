@@ -1,8 +1,8 @@
-import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
-import { FormGroup, FormBuilder } from "@angular/forms";
-import * as moment from "moment";
-import { ApiService } from "src/app/shared/services/api.service";
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import * as moment from 'moment';
+import { ApiService } from 'src/app/shared/services/api.service';
 
 export interface PeriodicElement {
   name: string;
@@ -12,14 +12,14 @@ export interface PeriodicElement {
 }
 
 @Component({
-  selector: "app-neosw",
-  templateUrl: "./neosw.component.html",
-  styleUrls: ["./neosw.component.scss"]
+  selector: 'app-neosw',
+  templateUrl: './neosw.component.html',
+  styleUrls: ['./neosw.component.scss']
 })
 export class NeoswComponent implements OnInit {
   form: FormGroup;
   neosw: any;
-  displayedColumns: string[] = ["name", "date", "hazardous", "sentry"];
+  displayedColumns: string[] = ['name', 'date', 'hazardous', 'sentry'];
   dataSource;
   any;
   loading = false;
@@ -30,16 +30,16 @@ export class NeoswComponent implements OnInit {
   ngOnInit() {
     this.form = this.fb.group({
       selected: {
-        startDate: moment(Date.now()).format("YYYY-MM-DD"),
-        endDate: moment(Date.now()).format("YYYY-MM-DD")
+        startDate: moment(Date.now()).format('YYYY-MM-DD'),
+        endDate: moment(Date.now()).format('YYYY-MM-DD')
       }
     });
   }
 
   async searchAsteroids(startDate, endDate) {
     const res: Observable<any> = await this.service.getNEOSW(
-      moment(startDate).format("YYYY-MM-DD"),
-      moment(endDate).format("YYYY-MM-DD")
+      moment(startDate).format('YYYY-MM-DD'),
+      moment(endDate).format('YYYY-MM-DD')
     );
     res.subscribe(data => {
       console.log(data);

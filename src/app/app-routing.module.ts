@@ -1,31 +1,36 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     children: [
       {
-        path: "apod",
-        loadChildren: () =>
-          import("./modules/apod/apod.module").then(m => m.ApodModule)
+        path: '',
+        redirectTo: 'apod',
+        pathMatch: 'full'
       },
       {
-        path: "neosw",
+        path: 'apod',
         loadChildren: () =>
-          import("./modules/neosw/neosw.module").then(m => m.NeoswModule)
+          import('./modules/apod/apod.module').then(m => m.ApodModule)
       },
       {
-        path: "insight-weather",
+        path: 'neosw',
         loadChildren: () =>
-          import("./modules/insight-weather/insight-weather.module").then(
+          import('./modules/neosw/neosw.module').then(m => m.NeoswModule)
+      },
+      {
+        path: 'insight-weather',
+        loadChildren: () =>
+          import('./modules/insight-weather/insight-weather.module').then(
             m => m.InsightWeatherModule
           )
       },
       {
-        path: "curiosity",
+        path: 'curiosity',
         loadChildren: () =>
-          import("./modules/curiosity/curiosity.module").then(
+          import('./modules/curiosity/curiosity.module').then(
             m => m.CuriosityModule
           )
       }

@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { ApiService } from "src/app/shared/services/api.service";
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/shared/services/api.service';
 
 @Component({
-  selector: "app-curiosity",
-  templateUrl: "./curiosity.component.html",
-  styleUrls: ["./curiosity.component.scss"]
+  selector: 'app-curiosity',
+  templateUrl: './curiosity.component.html',
+  styleUrls: ['./curiosity.component.scss']
 })
 export class CuriosityComponent implements OnInit {
   photos: any;
@@ -19,7 +19,7 @@ export class CuriosityComponent implements OnInit {
   }
 
   sortByDate(arr) {
-    arr.sort(function(a,b){
+    arr.sort((a, b) => {
       return Number(new Date(a.earth_date)) - Number(new Date(b.earth_date));
     });
 
